@@ -102,8 +102,6 @@ relatives_dict
 # 
 relatives_dict
 
-
-
 # %%
 print(positions_dict)
 

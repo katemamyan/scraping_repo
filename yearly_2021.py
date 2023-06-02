@@ -766,3 +766,144 @@ for key, value in yearly_dict.items():
 # %%
 df_35_final.to_csv("2021 | Գ.4. ԼՐԱՑՈՒՑԻՉ ՏԵՂԵԿՈՒԹՅՈՒՆՆԵՐ.csv")
 # %%
+# TABLE 36 | Դ.1. Մասնակցությունը առևտրային կազմակերպություններում
+
+df_36_final = pd.DataFrame()
+for key, value in yearly_dict.items():
+    r = requests.get(value)
+    soup = bs(r.content, "html.parser")
+    tables = soup.find_all("table")
+    try:
+        rows = tables[35].find_all('tr')
+        for row in rows:
+            data = []
+            cols = row.find_all('td')
+            cols = [col.text.strip() for col in cols]
+            data.append(cols)
+            df = pd.DataFrame(data)
+            df = df.dropna(how='all') # to remove empty rows
+            df['id'] = key
+            df_36_final = pd.concat([df_36_final, df], ignore_index=True)
+    except:
+        pass
+# %%
+df_36_final.to_csv("2021 | Դ.1. Մասնակցությունը առևտրային կազմակերպություններում.csv")
+# %%
+# TABLE 37 | Դ.2. Ներկայացվածությունը առևտրային կազմակերպությունների կառավարման, վարչական կամ վերահսկողական մարմիններում
+
+df_37_final = pd.DataFrame()
+for key, value in yearly_dict.items():
+    r = requests.get(value)
+    soup = bs(r.content, "html.parser")
+    tables = soup.find_all("table")
+    try:
+        rows = tables[36].find_all('tr')
+        for row in rows:
+            data = []
+            cols = row.find_all('td')
+            cols = [col.text.strip() for col in cols]
+            data.append(cols)
+            df = pd.DataFrame(data)
+            df = df.dropna(how='all') # to remove empty rows
+            df['id'] = key
+            df_37_final = pd.concat([df_37_final, df], ignore_index=True)
+    except:
+        pass
+# %%
+df_37_final.to_csv("2021 | Դ.2. Ներկայացվածությունը առևտրային կազմակերպությունների.csv")
+# %%
+# %%
+# TABLE 38 | Դ.3. Պաշտոն զբաղեցնող անձի մասնակցությամբ առևտրային կազմակերպությունում բաժնեմասը հավատարմագրային կառավարման հանձնելը
+
+df_38_final = pd.DataFrame()
+for key, value in yearly_dict.items():
+    r = requests.get(value)
+    soup = bs(r.content, "html.parser")
+    tables = soup.find_all("table")
+    try:
+        rows = tables[37].find_all('tr')
+        for row in rows:
+            data = []
+            cols = row.find_all('td')
+            cols = [col.text.strip() for col in cols]
+            data.append(cols)
+            df = pd.DataFrame(data)
+            df = df.dropna(how='all') # to remove empty rows
+            df['id'] = key
+            df_38_final = pd.concat([df_38_final, df], ignore_index=True)
+    except:
+        pass
+# %%
+df_38_final.to_csv("2021 | Դ.3. Պաշտոն զբաղեցնող անձի մասնակ.csv")
+# %%
+# %%
+# TABLE 39 | Դ.4. Հայտարարատուի անդամակցությունը ոչ առևտրային կազմակերպություններին և ներկայացվածությունը դրանց կառավարման, վարչական կամ վերահսկողական մարմիններում
+
+df_39_final = pd.DataFrame()
+for key, value in yearly_dict.items():
+    r = requests.get(value)
+    soup = bs(r.content, "html.parser")
+    tables = soup.find_all("table")
+    try:
+        rows = tables[38].find_all('tr')
+        for row in rows:
+            data = []
+            cols = row.find_all('td')
+            cols = [col.text.strip() for col in cols]
+            data.append(cols)
+            df = pd.DataFrame(data)
+            df = df.dropna(how='all') # to remove empty rows
+            df['id'] = key
+            df_39_final = pd.concat([df_39_final, df], ignore_index=True)
+    except:
+        pass
+# %%
+df_39_final.to_csv("2021 | Դ.4. Հայտարարատուի անդամակցությունը.csv")
+# %%
+# TABLE 40 | Դ.5. Հայտարարատուի անդամակցությունը կուսակցություններին և ներկայացվածությունը դրանց կառավարման, վարչական կամ վերահսկողական մարմիններում
+
+df_40_final = pd.DataFrame()
+for key, value in yearly_dict.items():
+    r = requests.get(value)
+    soup = bs(r.content, "html.parser")
+    tables = soup.find_all("table")
+    try:
+        rows = tables[39].find_all('tr')
+        for row in rows:
+            data = []
+            cols = row.find_all('td')
+            cols = [col.text.strip() for col in cols]
+            data.append(cols)
+            df = pd.DataFrame(data)
+            df = df.dropna(how='all') # to remove empty rows
+            df['id'] = key
+            df_40_final = pd.concat([df_40_final, df], ignore_index=True)
+    except:
+        pass
+# %%
+df_40_final.to_csv("2021 | Դ.5. Հայտարարատուի անդամակցությունը կուսակցություններին.csv")
+# %%
+# TABLE 41 | Դ.6. Պաշտոն զբաղեցնող անձի և նրա ընտանիքի անդամների կողմից, ինչպես նաև նրանց մասնակցությամբ կազմակերպությունների կողմից Հայաստանի Հանրապետության կամ համայնքների հետ կնքված
+
+df_41_final = pd.DataFrame()
+for key, value in yearly_dict.items():
+    r = requests.get(value)
+    soup = bs(r.content, "html.parser")
+    tables = soup.find_all("table")
+    try:
+        rows = tables[40].find_all('tr')
+        for row in rows:
+            data = []
+            cols = row.find_all('td')
+            cols = [col.text.strip() for col in cols]
+            data.append(cols)
+            df = pd.DataFrame(data)
+            df = df.dropna(how='all') # to remove empty rows
+            df['id'] = key
+            df_41_final = pd.concat([df_41_final, df], ignore_index=True)
+    except:
+        pass
+# %%
+df_41_final.to_csv("2021 | Դ.6. Պաշտոն զբաղեցնող անձի և նրա ընտանիքի անդամների կողմից.csv")
+
+# %%
